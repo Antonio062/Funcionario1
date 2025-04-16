@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="850.0" prefWidth="1218.0" spacing="20.0" style="-fx-background-color: #1e1e1e; -fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.funcionario1.FuncionarioController">
+
+    <!-- FORMULÁRIOS -->
+    <HBox alignment="TOP_CENTER" spacing="30.0">
+        <!-- Coluna 1: Dados Pessoais -->
+        <VBox spacing="10.0" style="-fx-background-color: #2e2e2e; -fx-padding: 15; -fx-background-radius: 10;">
+            <Label style="-fx-text-fill: white;" text="Nome" />
+            <TextField fx:id="nomeTextField" promptText="Digite o nome" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Matrícula" />
+            <TextField fx:id="matriculaTextField" promptText="Digite a matrícula" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="CPF" />
+            <TextField fx:id="cpfTextField" promptText="Digite o CPF" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Cargo" />
+            <TextField fx:id="cargoTextField" promptText="Digite o cargo" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Salário" />
+            <TextField fx:id="salarioTextField" promptText="Digite o salário" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Data de Nascimento" />
+            <TextField fx:id="dataNascimentoTextField" promptText="dd/mm/aaaa" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+        </VBox>
+
+        <!-- Coluna 2: Endereço -->
+        <VBox spacing="10.0" style="-fx-background-color: #2e2e2e; -fx-padding: 15; -fx-background-radius: 10;">
+            <Label style="-fx-text-fill: white;" text="Logradouro" />
+            <TextField fx:id="logradouroTextField" promptText="Digite o logradouro" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Número" />
+            <TextField fx:id="numeroTextField" promptText="Digite o número" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Complemento" />
+            <TextField fx:id="complementoTextField" promptText="Digite o complemento" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Bairro" />
+            <TextField fx:id="bairroTextField" promptText="Digite o bairro" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Cidade" />
+            <TextField fx:id="cidadeTextField" promptText="Digite a cidade" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Estado" />
+            <TextField fx:id="estadoTextField" promptText="Digite o estado" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="CEP" />
+            <TextField fx:id="cepTextField" promptText="Digite o CEP" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+        </VBox>
+
+        <!-- Coluna 3: Filtros -->
+        <VBox spacing="10.0" style="-fx-background-color: #2e2e2e; -fx-padding: 15; -fx-background-radius: 10;">
+            <Label style="-fx-text-fill: white;" text="Cargo Filtro" />
+            <TextField fx:id="FiltroCargoTextField" promptText="Cargo" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Salário Mínimo" />
+            <TextField fx:id="FiltroSalarioMinimoTextField" promptText="Mínimo" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Salário Máximo" />
+            <TextField fx:id="FiltroSalarioMaximoTextField" promptText="Máximo" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+
+            <Label style="-fx-text-fill: white;" text="Agrupar por Cidade" />
+            <TextField fx:id="FiltroCidadeTextField" promptText="Cidade" style="-fx-background-color: #3a3a3a; -fx-text-fill: white;" />
+        </VBox>
+    </HBox>
+
+    <!-- BOTÕES -->
+    <HBox alignment="CENTER" spacing="15.0" style="-fx-padding: 10;">
+        <Button fx:id="salvarButton" onAction="#salvarFuncionario" style="-fx-background-color: #444; -fx-text-fill: white;" text="Salvar" />
+        <Button fx:id="CarregarValores" onAction="#carregarValores" style="-fx-background-color: #444; -fx-text-fill: white;" text="Carregar" />
+        <Button fx:id="excluirFuncionarios" onAction="#excluirFuncionarios" style="-fx-background-color: #444; -fx-text-fill: white;" text="Excluir" />
+        <Button fx:id="filtrarCargo" onAction="#filtrarCargo" style="-fx-background-color: #444; -fx-text-fill: white;" text="Filtrar Cargo" />
+        <Button fx:id="filtrarSalario" onAction="#filtrarSalario" style="-fx-background-color: #444; -fx-text-fill: white;" text="Filtrar Salário" />
+        <Button fx:id="filtrarCidade" onAction="#filtrarCidade" style="-fx-background-color: #444; -fx-text-fill: white;" text="Agrupar Cidade" />
+    </HBox>
+
+    <!-- TABELA -->
+    <VBox spacing="10.0" style="-fx-padding: 10;">
+        <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Lista de Funcionários" />
+        <TableView fx:id="funcionariosTableView" prefHeight="250.0" prefWidth="860.0" style="-fx-background-color: #2e2e2e; -fx-text-fill: white;">
+            <columns>
+                <TableColumn fx:id="nomeColumn" prefWidth="150.0" text="Nome" />
+                <TableColumn fx:id="matriculaColumn" prefWidth="100.0" text="Matrícula" />
+                <TableColumn fx:id="cpfColumn" prefWidth="120.0" text="CPF" />
+                <TableColumn fx:id="cargoColumn" prefWidth="100.0" text="Cargo" />
+                <TableColumn fx:id="salarioColumn" prefWidth="100.0" text="Salário" />
+                <TableColumn fx:id="dataNascimentoColumn" prefWidth="120.0" text="Nascimento" />
+                <TableColumn fx:id="enderecoColumn" prefWidth="466.4000488281249" text="endereco" />
+            </columns>
+        </TableView>
+    </VBox>
+</VBox>
